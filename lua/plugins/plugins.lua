@@ -11,7 +11,7 @@ return {
 	},
 
 	{
-		"morhetz/gruvbox",
+		"ellisonleao/gruvbox.nvim",
 	},
 
 	{
@@ -358,4 +358,19 @@ return {
     {
         "ahmedkhalf/project.nvim"
     },
+
+    {
+        "akinsho/toggleterm.nvim",
+        config = function ()
+            require("toggleterm").setup{}
+        end
+    },
+
+    {
+        "numToStr/Comment.nvim",
+        config = function ()
+            require("Comment").setup()
+        end
+    },
+
 }

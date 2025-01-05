@@ -5,6 +5,7 @@ return {
 			dashboard = {
 				preset = {
 					header = [[
+        MR PRESIDENT THERE IS SECOND PLANE COMINGGGGG
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣤⣤⣤
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿
 ⠀⠀⠀⠀⠀⠀⠐⢦⡄⠀⠀⠀⠀⠀⠀⠀⠠⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿
@@ -20,7 +21,7 @@ return {
                     -- stylua: ignore
                     ---@type snacks.dashboard.Item[]
                     keys = {
-                      { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                      { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
                       { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                       { icon = " ", key = "g", desc = "File explorer", action = ":Telescope file_browser" },
                       { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },

@@ -3,6 +3,6 @@
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
 
-map({"n", "i"}, "<C-i>", "<cmd>IconPickerNormal<cr>", opts)
+map({"n", "i"}, "<C-i>", "<cmd>IconPickerNormal<cr>", { noremap = true, silent = true })
+map("n", "<leader>t", "<cmd>FloatermNew --height=0.8 --width=0.8 --wintype=float<cr>", { desc = "Terminal", noremap = true, silent = true})

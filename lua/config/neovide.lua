@@ -7,14 +7,15 @@ if vim.g.neovide then
 	vim.opt.relativenumber = true
 
 	-- Keymappings
-	vim.api.nvim_set_keymap("n", "<C-S-v>", '"+p', { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "<C-S-v>", '"+p', { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("i", "<C-S-v>", '<Esc>"+pa', { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("c", "<C-S-v>", [[<C-\>e getcmdline()<CR>]], { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("c", "<C-S-v>", "<C-R>+", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "<C-S-v>", ":let @+ = @/<CR>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("c", "<C-S-v>", "<C-r>+", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "<C-S-mf>", ":Telescope file_browser<CR>", { noremap = true, silent = true })
+    local opts = { noremap = true, silent = true }
+	vim.api.nvim_set_keymap("n", "<C-S-v>", '"+p', opts)
+	vim.api.nvim_set_keymap("v", "<C-S-v>", '"+p', opts)
+	vim.api.nvim_set_keymap("i", "<C-S-v>", '<Esc>"+pa', opts)
+	vim.api.nvim_set_keymap("c", "<C-S-v>", [[<C-\>e getcmdline()<CR>]], opts)
+	vim.api.nvim_set_keymap("c", "<C-S-v>", "<C-R>+", opts)
+	vim.api.nvim_set_keymap("n", "<C-S-v>", ":let @+ = @/<CR>", opts)
+	vim.api.nvim_set_keymap("c", "<C-S-v>", "<C-r>+", opts)
+	vim.api.nvim_set_keymap("n", "<C-S-mf>", ":Telescope file_browser<CR>", opts)
 
 	-- Animation
 	vim.g.neovide_cursor_animate_in_insert_mode = true
