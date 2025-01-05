@@ -25,7 +25,7 @@ return {
                       { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                       { icon = " ", key = "g", desc = "File explorer", action = ":Telescope file_browser" },
                       { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-                      { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+                      { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
                       { icon = " ", key = "x", desc = "Projects", action = ":Telescope projects" },
                       { icon = "舘", key = "l", desc = "Back to Dashboard", action = ":lua Snacks.dashboard()" },
                       { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
