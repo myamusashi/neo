@@ -7,7 +7,7 @@ if vim.g.neovide then
 	vim.opt.relativenumber = true
 
 	-- Keymappings
-    local opts = { noremap = true, silent = true }
+	local opts = { noremap = true, silent = true }
 	vim.api.nvim_set_keymap("n", "<C-S-v>", '"+p', opts)
 	vim.api.nvim_set_keymap("v", "<C-S-v>", '"+p', opts)
 	vim.api.nvim_set_keymap("i", "<C-S-v>", '<Esc>"+pa', opts)

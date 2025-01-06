@@ -1,7 +1,7 @@
 return {
 	"ahmedkhalf/project.nvim",
 	config = function()
-		require("project_nvim").setup {
+		require("project_nvim").setup({
 			-- Manual mode doesn't automatically change your root directory, so you have
 			-- the option to manually do so using `:ProjectRoot` command.
 			manual_mode = false,
@@ -40,8 +40,8 @@ return {
 			-- Path where project.nvim will store the project history for use in
 			-- telescope
 			datapath = vim.fn.stdpath("data"),
-		}
+		})
 
-        require("telescope").load_extension("projects")
+		require("telescope").load_extension("projects")
 	end,
 }

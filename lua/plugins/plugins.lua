@@ -355,22 +355,21 @@ return {
 		"nvimdev/dashboard-nvim",
 	},
 
-    {
-        "ahmedkhalf/project.nvim"
-    },
+	{
+		"ahmedkhalf/project.nvim",
+	},
 
-    {
-        "akinsho/toggleterm.nvim",
-        config = function ()
-            require("toggleterm").setup{}
-        end
-    },
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("toggleterm").setup({})
+		end,
+	},
 
-    {
-        "numToStr/Comment.nvim",
-        config = function ()
-            require("Comment").setup()
-        end
-    },
-
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 }
