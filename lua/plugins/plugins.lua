@@ -331,16 +331,41 @@ return {
 	},
 
 	{
-		"MysticalDevil/inlay-hints.nvim",
-		event = "LspAttach",
-		dependencies = { "neovim/nvim-lspconfig" },
+		"marko-cerovac/material.nvim",
+	},
+
+	{
+		"uloco/bluloco.nvim",
+		lazy = false,
+		priority = 1000,
+		dependencies = { "rktjmp/lush.nvim" },
 		config = function()
-			require("inlay-hints").setup()
+			-- your optional config goes here, see below.
 		end,
 	},
 
 	{
-		"marko-cerovac/material.nvim",
+		"ficcdaf/ashen.nvim",
+		lazy = false,
+		priority = 1000,
+		-- configuration is optional!
+		opts = {
+			-- your settings here
+		},
+	},
+
+	{
+		"comfysage/evergarden",
+		priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+		opts = {
+			transparent_background = true,
+			variant = "medium", -- 'hard'|'medium'|'soft'
+			overrides = {}, -- add custom overrides
+		},
+	},
+
+	{
+		"rebelot/kanagawa.nvim",
 	},
 
 	{
@@ -372,4 +397,8 @@ return {
 			require("Comment").setup()
 		end,
 	},
+
+    {
+        "booperlv/nvim-gomove"
+    },
 }

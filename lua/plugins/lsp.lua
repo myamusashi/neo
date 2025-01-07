@@ -1,6 +1,21 @@
 return {
 	"neovim/nvim-lspconfig",
-	config = function()
-		-- vim.lsp.inlay_hint.enable(false)
-	end,
+	opts = {
+		servers = {
+			clangd = {
+				cmd = {
+					"clangd",
+					"--background-index",
+					"--clang-tidy",
+					"--header-insertion=never",
+					"--completion-style=detailed",
+					"--function-arg-placeholders",
+					"--fallback-style=llvm",
+				},
+			},
+		},
+		inlay_hints = {
+			enabled = false,
+		},
+	},
 }
