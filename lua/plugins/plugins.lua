@@ -1,9 +1,5 @@
 return {
 	{
-		"sainnhe/sonokai",
-	},
-
-	{
 		"karb94/neoscroll.nvim",
 		config = function()
 			require("neoscroll").setup({})
@@ -76,12 +72,6 @@ return {
 		"mg979/vim-visual-multi",
 	},
 
-	{
-		"NvChad/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
 	{
 		"folke/twilight.nvim",
 		opts = {
@@ -267,7 +257,6 @@ return {
 
 	{
 		"olimorris/onedarkpro.nvim",
-		priority = 1000, -- Ensure it loads first
 	},
 
 	{
