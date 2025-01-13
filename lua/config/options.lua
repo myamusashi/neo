@@ -32,6 +32,7 @@ vim.opt.splitbelow = true
 
 -- Folding
 vim.opt.foldenable = true
+vim.opt.foldmethod = "manual"
 vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
