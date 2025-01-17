@@ -18,18 +18,17 @@ return {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⡨⢥⡖⠱⢈⡏⣙⡉⣁⠠⠀⠀⠿⠿⠿⠿⠿
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠈⠒⠀⠠⠂⠀⠀⠀⠀⠀⠀⠀⠀
                     ]],
-                    -- stylua: ignore
                     ---@type snacks.dashboard.Item[]
                     keys = {
-                      { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
-                      { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                      { icon = " ", key = "g", desc = "File explorer", action = ":Telescope file_browser" },
-                      { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-                      { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
-                      { icon = " ", key = "x", desc = "Projects", action = ":Telescope projects" },
-                      { icon = "舘", key = "l", desc = "Back to Dashboard", action = ":lua Snacks.dashboard()" },
-                      { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-                      { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                        { icon = " ", key = "f", desc = "Find file", action = ":Telescope find_files" },
+                        { icon = " ", key = "n", desc = "New file", action = ":ene | startinsert" },
+                        { icon = " ", key = "g", desc = "File explorer", action = ":Telescope file_browser" },
+                        { icon = " ", key = "g", desc = "Find text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+                        { icon = " ", key = "r", desc = "Recent files", action = ":Telescope oldfiles" },
+                        { icon = " ", key = "x", desc = "Projects", action = ":Telescope projects" },
+                        { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+                        { icon = " ", key = "c", desc = "Hyprland configurations", action = ":lua Snacks.dashboard.pick('files', {cwd = '$HOME/.config/hypr/'})" },
+                        { icon = " ", key = "q", desc = "Quit", action = ":qa" },
                     },
                     sections = {
                         { section = "terminal", cmd = "fortune -s | cowsay", hl = "header", padding = 1, indent = 8 },
