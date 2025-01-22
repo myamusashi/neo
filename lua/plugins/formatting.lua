@@ -12,6 +12,7 @@ return {
             -- Menambahkan formatter untuk C++
             cpp = { "clang-format" }, -- atau bisa menggunakan "astyle", "uncrustify"
             c = { "clang-format" },
+            nix = { "nixpkgs_fmt" },
         },
 
         -- Konfigurasi khusus untuk formatter
