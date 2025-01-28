@@ -8,12 +8,16 @@ return {
     },
 
     opts = function()
-        local clangd_handler = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-            virtual_text = false, -- Disable virtual text hanya untuk clangd
-            signs = true, -- Tetap tampilkan signs
-            underline = true, -- Tetap tampilkan underline
-            update_in_insert = false,
-        })
+        local function create_no_virtual_text_handler()
+            return vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+                virtual_text = false,
+                signs = true,
+                underline = true,
+                update_in_insert = false,
+            })
+        end
+
+        local diagnostic_handler = create_no_virtual_text_handler()
 
         setup = {
             require("lspconfig").clangd.setup({
@@ -28,52 +32,63 @@ return {
                     "--fallback-style=llvm",
                 },
                 handlers = {
-                    ["textDocument/publishDiagnostics"] = clangd_handler,
+                    ["textDocument/publishDiagnostics"] = diagnostic_handler,
                 },
             }),
 
             require("lspconfig").lua_ls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").cmake.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").cssls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").bashls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").dockerls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").fish_lsp.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").nil_ls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").gopls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").html.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").mesonlsp.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").marksman.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").texlab.setup({
@@ -105,10 +120,12 @@ return {
 
             require("lspconfig").ts_ls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").sqls.setup({
                 capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
         }
     end,
