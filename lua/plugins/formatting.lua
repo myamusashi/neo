@@ -1,4 +1,3 @@
--- ~/.config/nvim/lua/plugins/conform.lua
 return {
     "stevearc/conform.nvim",
     optional = true,
@@ -10,16 +9,19 @@ return {
 
             cpp = { "clang-format" },
             c = { "clang-format" },
-            nix = { "nixpkgs_fmt" },
-            
+            nix = { "nixfmt" },
             rust = { "rustfmt" }
         },
 
-        -- Konfigurasi khusus untuk formatter
         formatters = {
             clang_format = {
                 prepend_args = {
                     "--style=file",
+                },
+            },
+            nixfmt = {
+                prepend_args = {
+                    "--width=160",
                 },
             },
         },

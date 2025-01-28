@@ -11,3 +11,4 @@ map({ "n", "v" }, "<C-S-h>", "<Plug>GoNSMLeft", { noremap = true, silent = true 
 map({ "n", "v" }, "<C-S-j>", "<Plug>GoNSMDown", { noremap = true, silent = true })
 map({ "n", "v" }, "<C-S-k>", "<Plug>GoNSMUp", { noremap = true, silent = true })
 map({ "n", "v" }, "<C-S-l>", "<Plug>GoNSMRight", { noremap = true, silent = true })
+map({ "n", "v", "i" }, "<leader>d", "<cmd>lua vim.diagnostic.open_float()<cr>", { noremap = true, silent = true })
