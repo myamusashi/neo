@@ -11,6 +11,7 @@ return {
             ".hg",
             ".bzr",
             ".svn",
+            "flake.nix",
             "Makefile",
             "meson.build",
             "CMakeLists.txt",
@@ -20,7 +21,7 @@ return {
         opts.silent_chdir = false
         opts.show_hidden = false
         opts.exclude_dirs = {}
-        opts.ignore_lsp = {}
+        opts.ignore_lsp = { "clangd" }
         require("project_nvim").setup(opts)
         require("lazyvim.util").on_load("telescope.nvim", function()
             require("telescope").load_extension("projects")

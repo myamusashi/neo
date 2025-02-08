@@ -27,7 +27,7 @@ return {
                         { icon = " ", key = "r", desc = "Recent files", action = ":Telescope oldfiles" },
                         { icon = " ", key = "x", desc = "Projects", action = ":Telescope projects" },
                         { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-                        { icon = " ", key = "c", desc = "Hyprland configurations", action = ":lua Snacks.dashboard.pick('files', {cwd = '$HOME/.config/hypr/'})" },
+                        { icon = " ", key = "c", desc = "Hyprland configurations", action = ":lua Snacks.dashboard.pick('files', {cwd = '$HOME/.config/home-manager/modules/user/hypr'})" },
                         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
                     },
                     sections = {

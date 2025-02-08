@@ -1,4 +1,5 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local getCwd = vim.fn.getcwd()
 
 return {
     "nvim-lspconfig",
@@ -7,12 +8,12 @@ return {
         config = function() end,
     },
 
-    opts = function()
+    opts = function(client, bufnr)
         local function create_no_virtual_text_handler()
             return vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-                virtual_text = false,
+                virtual_text = true,
                 signs = true,
-                underline = true,
+                underline = false,
                 update_in_insert = false,
             })
         end
@@ -30,10 +31,15 @@ return {
                     "--completion-style=detailed",
                     "--function-arg-placeholders",
                     "--fallback-style=llvm",
+                    "--background-index",
                 },
                 handlers = {
                     ["textDocument/publishDiagnostics"] = diagnostic_handler,
                 },
+                on_attach = function(client, bufnr)
+                    -- Nonaktifkan fitur "change cwd" dari clangd
+                    client.server_capabilities.workspaceConfiguration = false
+                end,
             }),
 
             require("lspconfig").lua_ls.setup({
@@ -45,6 +51,16 @@ return {
                 capabilities = capabilities,
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
+
+            require("lspconfig").qmlls.setup({
+				cmd = { "qmlls" },
+                capabilities = capabilities,
+				filetypes = { "qml", "qmljs" },
+            }),
+
+			require("lspconfig").rust_analyzer.setup({
+				capabilities = capabilities,
+			}),
 
             require("lspconfig").cssls.setup({
                 capabilities = capabilities,

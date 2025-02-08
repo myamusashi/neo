@@ -1,3 +1,27 @@
+local formatters = {
+    -- Programming Languages
+    c = "󰉻 clang-format",
+    cpp = "󰉻 clang-format",
+    lua = "󰉻 stylua",
+    python = "󰉻 black",
+    javascript = "󰉻 prettier",
+    typescript = "󰉻 prettier",
+    javascriptreact = "󰉻 prettier",
+    typescriptreact = "󰉻 prettier",
+    json = "󰉻 prettier",
+    html = "󰉻 prettier",
+    css = "󰉻 prettier",
+    scss = "󰉻 prettier",
+    rust = "󰉻 rustfmt",
+    go = "󰉻 gofmt",
+    php = "󰉻 php-cs-fixer",
+    java = "󰉻 google-java-format",
+    ruby = "󰉻 rubocop",
+    markdown = "󰉻 prettier",
+    nix = "󰉻 nixfmt",
+    -- Tambahkan formatter lain sesuai kebutuhan
+}
+
 return {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -25,7 +49,15 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch", "diff", "diagnostics" },
                 lualine_c = { "" },
-                lualine_x = { "searchcount", "filetype", "progress" },
+                lualine_x = {
+                    "searchcount",
+                    "filetype",
+                    function()
+                        local filetype = vim.bo.filetype
+                        return formatters[filetype] or ""
+                    end,
+                    "progress",
+                },
                 lualine_y = { "location" },
                 lualine_z = { "filename" },
             },

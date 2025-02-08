@@ -21,7 +21,7 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 
 -- Indentation
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -36,3 +36,12 @@ vim.opt.foldmethod = "manual"
 vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
+
+-- Misc
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "nix",
+  callback = function()
+    vim.bo.shiftwidth = 2  -- Indentasi 2 spasi
+    vim.bo.tabstop = 2     -- Tab dianggap sebagai 2 spasi
+  end,
+})
