@@ -15,7 +15,6 @@ return {
             "html",
             "css",
             "scss",
-            "latex",
             "bash",
             "fish",
         }
