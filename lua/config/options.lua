@@ -7,6 +7,7 @@ vim.g.autoformat = false
 vim.g.snacks_animate = true
 vim.g.lazyvim_picker = "telescope"
 vim.g.lazyvim_cmp = "nvim-cmp"
+vim.g.mapleader = "\\"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cmdheight = 1
