@@ -5,7 +5,7 @@
 local map = vim.keymap.set
 
 map({ "n", "i" }, "<C-i>", "<cmd>IconPickerNormal<cr>", { noremap = true, silent = true })
-map({"n", "i"}, "<leader>e", "<cmd>Neotree toggle float<cr>", { noremap = false, silent = true })
+map({ "n", "i" }, "<leader>e", "<cmd>Neotree toggle float<cr>", { noremap = false, silent = true })
 map("n", "<leader>t", "<cmd>FloatermNew --height=0.8 --width=0.8 --wintype=float<cr>", { desc = "Terminal", noremap = true, silent = true })
 map({ "n", "v" }, "<leader>;", "<cmd>lua Snacks.dashboard()<cr>", { desc = "Dashboard", noremap = true, silent = true })
 map({ "n", "v" }, "<C-S-h>", "<Plug>GoNSMLeft", { noremap = true, silent = true })

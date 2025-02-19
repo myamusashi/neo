@@ -73,6 +73,10 @@ return {
     },
 
     {
+        "hzchirs/vim-material",
+    },
+
+    {
         "LazyVim/LazyVim",
         opts = {
             colorscheme = "kanagawa-dragon",

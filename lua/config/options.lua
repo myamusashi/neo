@@ -40,9 +40,9 @@ vim.opt.foldlevelstart = 99
 
 -- Misc
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "nix",
-  callback = function()
-    vim.bo.shiftwidth = 2  -- Indentasi 2 spasi
-    vim.bo.tabstop = 2     -- Tab dianggap sebagai 2 spasi
-  end,
+    pattern = "nix",
+    callback = function()
+        vim.bo.shiftwidth = 2 -- Indentasi 2 spasi
+        vim.bo.tabstop = 2 -- Tab dianggap sebagai 2 spasi
+    end,
 })

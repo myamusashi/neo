@@ -397,4 +397,26 @@ return {
     {
         "figsoda/nix-develop.nvim",
     },
+
+    {
+        "ldelossa/calltree.nvim",
+    },
+
+    {
+        "lukas-reineke/indent-blankline.nvim",
+    },
+
+    {
+        "hzchirs/vim-material",
+        config = function()
+            vim.g.material = "oceanic"
+        end,
+    },
+
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end,
+    },
 }

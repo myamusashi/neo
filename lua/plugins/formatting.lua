@@ -10,7 +10,7 @@ return {
             cpp = { "clang-format" },
             c = { "clang-format" },
             nix = { "alejandra" },
-            rust = { "rustfmt" }
+            rust = { "rustfmt" },
         },
 
         formatters = {

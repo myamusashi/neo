@@ -53,14 +53,14 @@ return {
             }),
 
             require("lspconfig").qmlls.setup({
-				cmd = { "qmlls" },
+                cmd = { "qmlls" },
                 capabilities = capabilities,
-				filetypes = { "qml", "qmljs" },
+                filetypes = { "qml", "qmljs" },
             }),
 
-			require("lspconfig").rust_analyzer.setup({
-				capabilities = capabilities,
-			}),
+            require("lspconfig").rust_analyzer.setup({
+                capabilities = capabilities,
+            }),
 
             require("lspconfig").cssls.setup({
                 capabilities = capabilities,
@@ -132,6 +132,10 @@ return {
                         },
                     },
                 },
+            }),
+            require("lspconfig").lemminx.setup({
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").ts_ls.setup({
