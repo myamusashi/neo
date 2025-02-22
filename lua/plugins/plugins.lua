@@ -419,4 +419,8 @@ return {
             require("colorizer").setup()
         end,
     },
+
+    {
+        "DaikyXendo/nvim-material-icon",
+    },
 }

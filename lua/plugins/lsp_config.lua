@@ -22,24 +22,7 @@ return {
 
         setup = {
             require("lspconfig").clangd.setup({
-                capabilities = capabilities,
-                cmd = {
-                    "clangd",
-                    "--background-index",
-                    "--clang-tidy",
-                    "--header-insertion=iwyu",
-                    "--completion-style=detailed",
-                    "--function-arg-placeholders",
-                    "--fallback-style=llvm",
-                    "--background-index",
-                },
-                handlers = {
-                    ["textDocument/publishDiagnostics"] = diagnostic_handler,
-                },
-                on_attach = function(client, bufnr)
-                    -- Nonaktifkan fitur "change cwd" dari clangd
-                    client.server_capabilities.workspaceConfiguration = false
-                end,
+                -- capabilities = capabilities,
             }),
 
             require("lspconfig").lua_ls.setup({

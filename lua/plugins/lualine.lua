@@ -1,5 +1,4 @@
 local formatters = {
-    -- Programming Languages
     c = "󰉻 clang-format",
     cpp = "󰉻 clang-format",
     lua = "󰉻 stylua",
@@ -18,8 +17,7 @@ local formatters = {
     java = "󰉻 google-java-format",
     ruby = "󰉻 rubocop",
     markdown = "󰉻 prettier",
-    nix = "󰉻 nixfmt",
-    -- Tambahkan formatter lain sesuai kebutuhan
+    nix = "󰉻 alejandra",
 }
 
 return {
@@ -47,8 +45,13 @@ return {
             },
             sections = {
                 lualine_a = { "mode" },
-                lualine_b = { "branch", "diff", "diagnostics" },
-                lualine_c = { "" },
+                lualine_b = { "branch", "diff" },
+                lualine_c = {
+                    {
+                        "diagnostics",
+                        sources = { "nvim_lsp", "nvim_diagnostic" },
+                    },
+                },
                 lualine_x = {
                     "searchcount",
                     "filetype",
@@ -56,10 +59,9 @@ return {
                         local filetype = vim.bo.filetype
                         return formatters[filetype] or ""
                     end,
-                    "progress",
                 },
-                lualine_y = { "location" },
-                lualine_z = { "filename" },
+                lualine_y = { "progress" },
+                lualine_z = { "location" },
             },
             inactive_sections = {
                 lualine_a = {},
@@ -70,12 +72,12 @@ return {
                 lualine_z = {},
             },
             tabline = {
-                lualine_a = {},
-                lualine_b = { "branch" },
-                lualine_c = { "filename" },
-                lualine_x = { "searchcount" },
+                lualine_a = { "windows" },
+                lualine_b = { "selectioncount" },
+                lualine_c = {},
+                lualine_x = {},
                 lualine_y = {},
-                lualine_z = {},
+                lualine_z = { "os.date('%r')", "data", "require'lsp-status'.status()" },
             },
             winbar = {},
             inactive_winbar = {},
