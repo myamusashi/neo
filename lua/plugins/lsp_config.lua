@@ -22,7 +22,8 @@ return {
 
         setup = {
             require("lspconfig").clangd.setup({
-                -- capabilities = capabilities,
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").lua_ls.setup({
@@ -65,7 +66,7 @@ return {
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
-            require("lspconfig").nil_ls.setup({
+            require("lspconfig").nixd.setup({
                 capabilities = capabilities,
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
