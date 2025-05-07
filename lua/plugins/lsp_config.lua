@@ -26,6 +26,10 @@ return {
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
+            require("lspconfig").jdtls.setup({
+                capabilities = capabilities,
+            }),
+
             require("lspconfig").lua_ls.setup({
                 capabilities = capabilities,
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
@@ -67,6 +71,11 @@ return {
             }),
 
             require("lspconfig").nixd.setup({
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
+            }),
+
+            require("lspconfig").nil_ls.setup({
                 capabilities = capabilities,
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
@@ -117,12 +126,38 @@ return {
                     },
                 },
             }),
+
+            require("lspconfig").dockerls.setup({
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
+            }),
+
+            require("lspconfig").sqls.setup({
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
+            }),
+
             require("lspconfig").lemminx.setup({
                 capabilities = capabilities,
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),
 
             require("lspconfig").ts_ls.setup({
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
+            }),
+
+            require("lspconfig").tailwindcss.setup({
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
+            }),
+
+            require("lspconfig").pylsp.setup({
+                capabilities = capabilities,
+                handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
+            }),
+
+            require("lspconfig").jsonls.setup({
                 capabilities = capabilities,
                 handlers = { ["textDocument/publishDiagnostics"] = diagnostic_handler },
             }),

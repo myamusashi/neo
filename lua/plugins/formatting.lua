@@ -11,6 +11,9 @@ return {
             c = { "clang-format" },
             nix = { "alejandra" },
             rust = { "rustfmt" },
+            java = { "google-java-format" },
+            python = { "black" },
+            json = { "prettier" },
         },
 
         formatters = {

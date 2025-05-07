@@ -31,7 +31,7 @@ return {
                             icon = " ",
                             key = "c",
                             desc = "Hyprland configurations",
-                            action = ":lua Snacks.dashboard.pick('files', {cwd = '$HOME/.config/home-manager/modules/user/hypr'})",
+                            action = ":lua Snacks.dashboard.pick('files', {cwd = '$HOME/.dots/home/programs/hypr'})",
                         },
                         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
                     },

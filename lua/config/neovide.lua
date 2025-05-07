@@ -1,6 +1,6 @@
 if vim.g.neovide then
     vim.o.guifont = "CaskaydiaMono Nerd Font:h12"
-    vim.g.neovide_transparency = 0.8
+    vim.g.neovide_opacity = 0.8
     vim.g.neovide_hide_mouse_when_typing = true
     vim.opt.number = true
     vim.opt.cmdheight = 1

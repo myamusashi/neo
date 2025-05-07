@@ -28,6 +28,10 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
+-- Diagnostic
+vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({ virtual_lines = true })
+
 -- Split
 vim.opt.splitbelow = true
 
@@ -46,3 +50,6 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo.tabstop = 2 -- Tab dianggap sebagai 2 spasi
     end,
 })
+
+vim.lsp.enable("svelte")
+

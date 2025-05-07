@@ -4,6 +4,9 @@
 
 local map = vim.keymap.set
 
+map({ "n", "i" }, "<leader>ad", "<cmd>NixDevelop<cr>", { desc = "Enter nix env (develop)", noremap = true, silent = true })
+map({ "n", "i" }, "<leader>as", "<cmd>NixShell<cr>", { desc = "Idk why they made same fucking functionality between develop and shell", noremap = true, silent = true })
+map({ "n", "i" }, "<leader>mc", "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
 map({ "n", "i" }, "<C-i>", "<cmd>IconPickerNormal<cr>", { noremap = true, silent = true })
 map({ "n", "i" }, "<leader>e", "<cmd>Neotree toggle float<cr>", { noremap = false, silent = true })
 map("n", "<leader>t", "<cmd>FloatermNew --height=0.8 --width=0.8 --wintype=float<cr>", { desc = "Terminal", noremap = true, silent = true })
